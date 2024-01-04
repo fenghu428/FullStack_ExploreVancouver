@@ -1,0 +1,79 @@
+/* Places.css */
+
+.places-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: 30px 10px;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    margin: 20px auto; 
+    width: 80%; 
+}
+
+/* Adjustments for medium screens: 3 items per row */
+@media (min-width: 601px) and (max-width: 768px) {
+    .places-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Adjustments for larger screens: 5 items per row */
+@media (min-width: 769px) {
+    .places-container {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+.place {
+    width: 100%;
+    order: none;
+}
+
+.place:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.place-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.place-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.place-image-container:hover .place-image {
+    transform: scale(1.1);
+}
+
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #f00;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.favorite-icon:hover {
+    color: #c00;
+}
+
+.place h3 {
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.place p {
+    margin: 0 10px 10px;
+    color: #666;
+}

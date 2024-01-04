@@ -1,0 +1,81 @@
+.profile-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.profile-page h2 {
+    color: #333;
+    text-align: center;
+}
+
+.profile-page > div {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.favorite-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.favorite-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px; 
+}
+
+.favorite-details h4,
+.favorite-details p {
+    margin: 0;
+    padding: 2px 0;
+}
+
+.favorite-details h4 {
+    font-size: 1rem;
+    color: #007bff;
+}
+
+.favorite-details p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.favorites-list h3 {
+    color: #333;
+}
+
+.logout-button {
+    display: block; 
+    width: 200px; 
+    margin: 20px auto; 
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #fff;
+    background-color: green;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: darkgreen; 
+}
+
+@media (max-width: 600px) {
+    .logout-button {
+        width: 150px; 
+    }
+}
