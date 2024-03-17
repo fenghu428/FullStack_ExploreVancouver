@@ -16,7 +16,7 @@ import NotFound from './NotFound';
 import ProfilePage from './ProfilePage';
 import PlaceDetail from './PlaceDetail';
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = "https://full-stack-explore-vancouver-api.vercel.app/";
 axios.defaults.withCredentials = true;
 
 function App() {
