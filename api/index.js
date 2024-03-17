@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(cors({
-  origin: ['https://full-stack-explore-vancouver-api.vercel.app/', 'http://localhost:3000'], 
+  origin: 'https://full-stack-explore-vancouver-api.vercel.app/', 
   credentials: true,
 }));
 
