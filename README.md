@@ -41,3 +41,7 @@ The "Explore Vancouver" application utilizes a structured database to efficientl
    - References `Places` collection items by their unique IDs.
 
 This structure supports the functionality of the application by allowing efficient data retrieval for features like user authentication, searching, and categorizing attractions.
+
+Video of this project:
+
+https://github.com/fenghu428/ExploreVancouver/assets/132985204/e56f8bc2-c23d-4973-a806-0839b2252d50
