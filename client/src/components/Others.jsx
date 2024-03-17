@@ -14,15 +14,14 @@ export default function Others() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('/api/places?category=other')
-            .then(response => {
-                if (Array.isArray(response.data)) {
-                    setOthers(response.data);
-                } else {
-                    console.error('Expected an array for others, but received:', response.data);
-                }
-            })
-            .catch(error => console.error('Error fetching others:', error));
+        (async () => {
+            try {
+                const response = await axios.get('/api/places?category=other');
+                setOthers(response.data);
+            } catch (error) {
+                console.error('Error fetching ski others:', error);
+            }
+        })();
     }, []);
 
     const handleFavoriteClick = (e, skiresortId) => {
@@ -82,7 +81,7 @@ export default function Others() {
             {others.map(other => (
                 <div key={other._id} className="place" onClick={() => handlePlaceClick(other._id)}>
                     <div className="place-image-container">
-                        <img src={other.photo} alt={other.title} className="place-image" />
+                        <img src={other.photo} alt={other.title} className="place-image" loading="lazy" />
                         <FontAwesomeIcon 
                             icon={favorites.has(other._id) ? solidHeart : regularHeart}
                             className="favorite-icon"

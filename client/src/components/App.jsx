@@ -16,7 +16,7 @@ import NotFound from './NotFound';
 import ProfilePage from './ProfilePage';
 import PlaceDetail from './PlaceDetail';
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 axios.defaults.withCredentials = true;
 
 function App() {

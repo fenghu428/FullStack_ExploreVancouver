@@ -14,15 +14,14 @@ export default function SkiResorts() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('/api/places?category=skiresort')
-            .then(response => {
-                if (Array.isArray(response.data)) {
-                    setSkiresorts(response.data);
-                } else {
-                    console.error('Expected an array for ski resorts, but received:', response.data);
-                }
-            })
-            .catch(error => console.error('Error fetching ski resorts:', error));
+        (async () => {
+            try {
+                const response = await axios.get('/api/places?category=skiresort');
+                setSkiresorts(response.data);
+            } catch (error) {
+                console.error('Error fetching ski resorts:', error);
+            }
+        })();
     }, []);
 
     const handleFavoriteClick = (e, skiresortId) => {
@@ -82,7 +81,7 @@ export default function SkiResorts() {
             {skiresorts.map(skiresort => (
                 <div key={skiresort._id} className="place" onClick={() => handlePlaceClick(skiresort._id)}>
                     <div className="place-image-container">
-                        <img src={skiresort.photo} alt={skiresort.title} className="place-image" />
+                        <img src={skiresort.photo} alt={skiresort.title} className="place-image" loading="lazy" />
                         <FontAwesomeIcon 
                             icon={favorites.has(skiresort._id) ? solidHeart : regularHeart}
                             className="favorite-icon"

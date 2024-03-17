@@ -16,7 +16,7 @@ function Layout() {
             {/* Footer */}
             <footer className="footer">
                 <div className="footer-content">
-                    <p>&copy; 2023 Explore Vancouver. All rights reserved.</p>
+                    <p>&copy; 2024 Explore Vancouver. All rights reserved.</p>
                 </div>
             </footer>
         </div>

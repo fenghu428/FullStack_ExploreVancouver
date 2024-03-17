@@ -8,7 +8,8 @@ const placeSchema = mongoose.Schema({
         type: String,
         enum: ['museum', 'park', 'skiresort', 'other'],
         required: true
-    }
+    },
+    description: String
 });
 
 const Place = mongoose.model('Place', placeSchema);

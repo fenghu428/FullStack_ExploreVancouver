@@ -14,15 +14,15 @@ export default function Museums() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('/api/places?category=museum')
-            .then(response => {
-                if (Array.isArray(response.data)) {
-                    setMuseums(response.data);
-                } else {
-                    console.error('Expected an array for museums, but received:', response.data);
-                }
-            })
-            .catch(error => console.error('Error fetching museums:', error));
+        const fetchMuseumsData = async () => {
+            try {
+                const response = await axios.get('/api/places?category=museum');
+                setMuseums(response.data);
+            } catch (error) {
+                console.error('Error fetching museums:', error);
+            }
+        };
+        fetchMuseumsData();
     }, []);
 
     const handleFavoriteClick = (e, museumId) => {
@@ -82,7 +82,7 @@ export default function Museums() {
             {museums.map(museum => (
                 <div key={museum._id} className="place" onClick={() => handlePlaceClick(museum._id)}>
                     <div className="place-image-container">
-                        <img src={museum.photo} alt={museum.title} className="place-image" />
+                        <img src={museum.photo} alt={museum.title} className="place-image" loading="lazy" />
                         <FontAwesomeIcon 
                             icon={favorites.has(museum._id) ? solidHeart : regularHeart}
                             className="favorite-icon"

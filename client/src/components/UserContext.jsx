@@ -1,29 +1,32 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
-export const UserContext = createContext({});
+export const UserContext = createContext();
 
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [ready, setReady] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('/profile')
-      .then(({ data }) => {
-        setUser(data);
-        console.log("User context updated:", data);
-      })
-      .catch((error) => {
-        console.error("Error fetching user profile:", error);
-        setUser(null);
-      })
-      .finally(() => {
-        setReady(true);
-      });
-  }, []); 
+    const fetchUserProfile = async () => {
+        try {
+            const { data } = await axios.get('/account');
+            setUser(data);
+            console.log("User context updated:", data);
+        } catch (error) {
+            console.log("Not logged in or token expired");
+            setUser(null);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    fetchUserProfile();
+}, []);
+
 
   return (
-    <UserContext.Provider value={{ user, setUser, ready }}>
+    <UserContext.Provider value={{ user, setUser, loading }}>
       {children}
     </UserContext.Provider>
   );

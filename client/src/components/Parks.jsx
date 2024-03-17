@@ -14,15 +14,14 @@ export default function Parks() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('/api/places?category=park')
-            .then(response => {
-                if (Array.isArray(response.data)) {
-                    setParks(response.data);
-                } else {
-                    console.error('Expected an array for parks, but received:', response.data);
-                }
-            })
-            .catch(error => console.error('Error fetching parks:', error));
+        (async () => {
+            try {
+                const response = await axios.get('/api/places?category=park');
+                setParks(response.data);
+            } catch (error) {
+                console.error('Error fetching parks:', error);
+            }
+        })();
     }, []);
 
     const handleFavoriteClick = (e, parkId) => {
@@ -82,7 +81,7 @@ export default function Parks() {
             {parks.map(park => (
                 <div key={park._id} className="place" onClick={() => handlePlaceClick(park._id)}>
                     <div className="place-image-container">
-                        <img src={park.photo} alt={park.title} className="place-image" />
+                        <img src={park.photo} alt={park.title} className="place-image" loading="lazy" />
                         <FontAwesomeIcon 
                             icon={favorites.has(park._id) ? solidHeart : regularHeart}
                             className="favorite-icon"
