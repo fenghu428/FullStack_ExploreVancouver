@@ -22,9 +22,9 @@ a {
 /* Header Styles */
 header {
   position: fixed;
-  top: 0; 
-  width: 100%; 
-  z-index: 1000; 
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   background-color: #f8f8f8;
 }
 
@@ -71,7 +71,7 @@ header {
 }
 
 .header-links .menu {
-  width: 100%; 
+  width: 100%;
 }
 
 .menu-list {
@@ -83,21 +83,21 @@ header {
 }
 
 .menu-list li {
-  display: inline-block; 
+  display: inline-block;
   margin: 0 10px;
 }
 
 .menu-list li a {
   color: black;
   text-decoration: none;
-  font-size: 24px; 
+  font-size: 24px;
   font-weight: 500;
   text-transform: capitalize;
 }
 
 .menu-list li:hover {
-  text-decoration: underline; 
-    background-color: transparent; 
+  text-decoration: underline;
+  background-color: transparent;
 }
 
 /* Icon Styles */
@@ -125,8 +125,8 @@ header {
 
 .full-width-image {
   width: 100%;
-  height: auto; 
-  max-height: 500px;
+  height: auto;
+  max-height: 50vh; 
 }
 
 .nav-button {
@@ -139,6 +139,8 @@ header {
   font-size: 24px;
   color: #333;
   z-index: 10;
+  min-width: 48px;
+  min-height: 48px;
 }
 
 .nav-button.left {
@@ -197,7 +199,7 @@ header {
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #f9f9f9;
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .search-result-item:hover {
@@ -232,11 +234,11 @@ header {
 .popular-attractions-title {
   text-align: center;
   font-size: 1.5em;
-  margin: 40px 0; 
+  margin: 40px 0;
   color: #333;
-  font-weight: bold; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .featured-places {
@@ -280,27 +282,27 @@ header {
 
 @media only screen and (min-width: 768px) {
   .featured-places {
-    flex-wrap: wrap; 
-    justify-content: flex-start; 
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
   .featured-place-item {
-    width: calc(100% / 6 - 40px);
+    width: calc(100% / 3 - 40px); 
     margin-bottom: 20px;
   }
 
   .featured-place-item img {
-    height: 150px; 
+    height: 150px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .featured-place-item {
-    max-width: calc(100% / 3 - 20px);
+    max-width: calc(100% / 2 - 20px); 
   }
 
   .menu-list li a {
-    font-size: 24px; 
+    font-size: 20px; 
   }
 
   .featured-places {
@@ -314,12 +316,21 @@ header {
 
 @media screen and (max-width: 600px) {
   body, html {
-    padding-top: 150px; 
+    padding-top: 150px;
+  }
+
+  .featured-places, .search-results {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .featured-place-item, .search-result-item {
+    width: 90%; 
   }
 
   .featured-places {
-    gap: 20px; 
-    padding: 10px; 
+    gap: 20px;
+    padding: 10px;
   }
 
   .featured-place-item {
@@ -327,28 +338,25 @@ header {
   }
 
   .featured-place-item img {
-    height: auto; 
+    height: auto;
   }
 
   .menu-list {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 10px;
   }
 
-  .featured-place-details h4, .featured-place-details p {
-    font-size: 0.8em;
+  .featured-place-details h4, .featured-place-details p, .search-bar button, .menu-list li a {
+    font-size: 1rem;
   }
 
   .menu-list li {
-    width: 100%; 
-  }
-
-  .menu-list li a {
-    font-size: 16px;
+    width: 100%;
   }
 
   .nav-button {
-    font-size: 16px; 
+    min-width: 48px; 
+    min-height: 48px; 
   }
 
   .full-width-image {
