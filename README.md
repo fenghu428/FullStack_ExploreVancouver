@@ -61,10 +61,7 @@ This structure supports the functionality of the application by allowing efficie
 5. **Register Page**
     ![Register](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/4fabc2c5-5eb8-4d88-bf54-1f44bbcaaeaf)
 
-6. **Detail Page**
-   ![DetailPage](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/55ba4dee-3fa2-4b58-ad48-d5af5292922c)
-
-7. **Profile Page**
+6. **Profile Page**
    ![ProfilePage](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/df5f787c-5a3d-4262-961f-756390b82c35)
 
 ## Video of this project:
