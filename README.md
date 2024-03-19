@@ -2,6 +2,9 @@
 
 README.md for Explore Vancouver App
 
+# Project Website
+https://full-stack-explore-vancouver.vercel.app/
+
 ## Introduction
 
 The "Explore Vancouver" application is a dynamic full-stack web application designed for users to explore and search for attractions in Vancouver. It provides detailed information about various attractions, including museums, parks, ski resorts, and others. Users have the capability to view these details and add attractions to their favorites list. The application's database, storing both places and user information, is managed using MongoDB. For the backend, Express.js and Node.js have been utilized to ensure efficient and seamless data handling. The frontend is crafted using React, offering a user-friendly and interactive experience for those navigating through the attractions of Vancouver.
