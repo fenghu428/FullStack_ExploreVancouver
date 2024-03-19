@@ -48,16 +48,24 @@ This structure supports the functionality of the application by allowing efficie
 ## Project Screenshot
 1. **HomePage**
    ![HomePage](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/46151ee2-8ed7-42ec-8175-cd84ea106fb4)
+
 2. **Museums Page**
    ![Museums](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/794bbac5-9dbc-4609-a2d9-de3a837ee1b8)
+
 3. **Detail Page**
    ![DetailPage](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/61d9dc1c-c92e-4190-aebe-4c1d8a4b76fd)
+
 4. **Login Page**
    ![LoginPage](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/d286d54e-687a-4df7-8ad8-169507be8e79)
+
 5. **Register Page**
     ![Register](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/4fabc2c5-5eb8-4d88-bf54-1f44bbcaaeaf)
+
 6. **Detail Page**
    ![DetailPage](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/55ba4dee-3fa2-4b58-ad48-d5af5292922c)
+
+7. **Profile Page**
+   ![ProfilePage](https://github.com/fenghu428/FullStack_ExploreVancouver/assets/132985204/df5f787c-5a3d-4262-961f-756390b82c35)
 
 ## Video of this project:
 
