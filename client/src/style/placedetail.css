@@ -57,7 +57,7 @@
   margin-right: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .place-detail .title-and-favorite,
   .place-detail img {
     width: 100%;
@@ -72,10 +72,21 @@
     text-align: left;
     width: 80%;
   }
+
+  .map-container {
+    height: 250px;
+  }
 }
 
 .map-container {
   margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .map-container h3 {
@@ -85,8 +96,6 @@
 }
 
 .map-container div {
-  height: 400px;
+  height: 100%;
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

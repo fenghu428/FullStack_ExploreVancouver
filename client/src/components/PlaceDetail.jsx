@@ -37,17 +37,33 @@ function PlaceDetail() {
   }, [id, user]);
 
   useEffect(() => {
-    if (place && place.latitude && place.longitude && window.google) {
-      const map = new window.google.maps.Map(mapRef.current, {
-        center: { lat: place.latitude, lng: place.longitude },
-        zoom: 15,
-      });
+    if (place && place.latitude && place.longitude) {
+      const loadGoogleMapsScript = () => {
+        const script = document.createElement("script");
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`;
+        script.async = true;
+        script.onload = initializeMap;
+        document.head.appendChild(script);
+      };
 
-      new window.google.maps.Marker({
-        position: { lat: place.latitude, lng: place.longitude },
-        map: map,
-        title: place.title,
-      });
+      const initializeMap = () => {
+        const map = new window.google.maps.Map(mapRef.current, {
+          center: { lat: place.latitude, lng: place.longitude },
+          zoom: 13,
+        });
+
+        new window.google.maps.Marker({
+          position: { lat: place.latitude, lng: place.longitude },
+          map: map,
+          title: place.title,
+        });
+      };
+
+      if (!window.google) {
+        loadGoogleMapsScript();
+      } else {
+        initializeMap();
+      }
     }
   }, [place]);
 
@@ -93,7 +109,7 @@ function PlaceDetail() {
 
       <div className="map-container">
         <h3>Location</h3>
-        <div ref={mapRef} style={{ height: "400px", width: "100%" }}></div>
+        <div ref={mapRef} style={{ height: "100%", width: "100%" }}></div>
       </div>
     </div>
   );

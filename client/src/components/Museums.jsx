@@ -12,7 +12,6 @@ export default function Museums() {
   const [favorites, setFavorites] = useState(new Set());
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-  const mapRef = useRef(null);
 
   useEffect(() => {
     const fetchMuseumsData = async () => {

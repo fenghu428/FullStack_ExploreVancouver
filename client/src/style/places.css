@@ -1,76 +1,77 @@
 /* Places.css */
 
 .places-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px 10px;
-    padding: 20px;
-    margin: 20px auto; 
-    width: 80%; 
-    background-color: transparent;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  background-color: transparent;
 }
 
 /* Adjustments for medium screens: 3 items per row */
 @media (min-width: 601px) and (max-width: 768px) {
-    .places-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .places-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Adjustments for larger screens: 5 items per row */
 @media (min-width: 769px) {
-    .places-container {
-        grid-template-columns: repeat(5, 1fr);
-    }
+  .places-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .place {
-    width: 100%;
-    transition: box-shadow 0.3s ease;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
 }
 
 .place:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .place-image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 16 / 9;
 }
 
 .place-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .place-image-container:hover .place-image {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .favorite-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: #f00;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #f00;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .favorite-icon:hover {
-    color: #c00;
+  color: #c00;
 }
 
 .place h3 {
-    margin: 10px;
+  margin: 10px;
 }
 
-.place h3, .place p {
-    margin: 10px; 
-    font-size: 1.2em;
-    color: #666; 
+.place h3,
+.place p {
+  margin: 10px;
+  font-size: 1.2em;
+  color: #666;
 }
