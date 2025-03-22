@@ -6,15 +6,29 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Explore Vancouver: Discover museums, attractions, and more in Vancouver."
     />
     <link rel="manifest" href="/manifest.json" />
 
+    <!-- Preconnect to Google Maps API for faster loading -->
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+
     <title>Explore Vancouver</title>
-    
+
+    <script>
+      const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-spinner">Loading Explore Vancouver...</div>
+    </div>
   </body>
 </html>
