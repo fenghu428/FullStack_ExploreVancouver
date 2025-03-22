@@ -35,7 +35,7 @@ app.use(morgan("dev"));
 const corsOptions = {
   origin: [
     "https://full-stack-explore-vancouver.vercel.app",
-    "http://localhost:3000", // Add localhost for development
+    "http://localhost:3000",
   ],
   credentials: true,
 };
@@ -235,6 +235,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(5001, () => {
+  console.log("Server running on port 5001");
 });
